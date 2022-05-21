@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EFCoreRepositoryPatternDemo.Models;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreRepositoryPatternDemo
 {
@@ -26,8 +26,11 @@ namespace EFCoreRepositoryPatternDemo
         {
             services.AddControllersWithViews();
             services.AddSession(); // as we are using session variable we required to add this line
+            services.AddDbContextPool<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDBConnection")));
+            //here we can use AddDbContext instead of pool but it will make our webapp slow when more people access it at a time
 
             services.AddScoped<IEmployeeRepository, InMemoryRepository>();  // first paramaeter is interface/services and 2nd paramter is implemented class 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
