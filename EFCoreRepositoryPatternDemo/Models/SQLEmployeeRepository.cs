@@ -14,24 +14,24 @@ namespace EFCoreRepositoryPatternDemo.Models
         }
         public ClsEmployee Add(ClsEmployee employee)
         {
-            context.CoreEmployees.Add(employee);
+            context.coreEmployees.Add(employee);
             context.SaveChanges();
             return employee;
         }
 
         public void AddSkill(ClsSkill skill)
         {
-            context.CoreSkills.Add(skill);
+            context.coreSkill.Add(skill);
             context.SaveChanges();
 
         }
 
         public ClsEmployee Delete(int id)
         {
-            ClsEmployee employee = context.CoreEmployees.Find(id);
+            ClsEmployee employee = context.coreEmployees.Find(id);
             if (employee != null)
             {
-                context.CoreEmployees.Remove(employee);
+                context.coreEmployees.Remove(employee);
                 context.SaveChanges();
 
             }
@@ -41,48 +41,48 @@ namespace EFCoreRepositoryPatternDemo.Models
 
         public void DeleteSkill(int id)
         {
-            ClsSkill skill = context.CoreSkills.Find(id);
+            ClsSkill skill = context.coreSkill.Find(id);
             if (skill != null)
             {
-                context.CoreSkills.Remove(skill);
+                context.coreSkill.Remove(skill);
                 context.SaveChanges();
             }
         }
 
         public IEnumerable<ClsEmployee> GetAllEmployee()
         {
-            IEnumerable<ClsEmployee> employees = context.CoreEmployees;
+            IEnumerable<ClsEmployee> employees = context.coreEmployees;
 
-            return context.CoreEmployees;
+            return context.coreEmployees;
         }
 
         public IEnumerable<ClsSkill> GetAllSkill(int Id)
         {
-            return context.CoreSkills.Where(s => s.EmpID == Id).ToList<ClsSkill>();
+            return context.coreSkill.Where(s => s.EmpID == Id).ToList<ClsSkill>();
 
 
         }
 
         public ClsEmployee GetEmployee(ClsEmployee employee)
         {
-            return context.CoreEmployees.FirstOrDefault(e => e.Email == employee.Email && e.Password == employee.Password);
+            return context.coreEmployees.FirstOrDefault(e => e.Email == employee.Email && e.Password == employee.Password);
 
         }
 
         public ClsEmployee GetEmployeeByID(int id)
         {
 
-            return context.CoreEmployees.FirstOrDefault(e => e.EmpID == id);
+            return context.coreEmployees.FirstOrDefault(e => e.EmpID == id);
         }
 
         public ClsSkill GetSkill(int Id)
         {
-            return context.CoreSkills.FirstOrDefault(s => s.SkillId == Id);
+            return context.coreSkill.FirstOrDefault(s => s.SkillId == Id);
         }
 
         public ClsEmployee Update(ClsEmployee employeeChanges)
         {
-            ClsEmployee employee = context.CoreEmployees.FirstOrDefault(e => e.EmpID == employeeChanges.EmpID);
+            ClsEmployee employee = context.coreEmployees.FirstOrDefault(e => e.EmpID == employeeChanges.EmpID);
             if (employee != null)
             {
                 employee.FirstName = employeeChanges.FirstName;
@@ -92,7 +92,7 @@ namespace EFCoreRepositoryPatternDemo.Models
                 employee.Email = employeeChanges.Email;
 
             }
-            var emp = context.CoreEmployees.Attach(employee);
+            var emp = context.coreEmployees.Attach(employee);
             emp.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
 

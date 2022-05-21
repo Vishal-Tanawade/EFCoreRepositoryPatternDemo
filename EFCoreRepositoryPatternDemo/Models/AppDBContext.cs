@@ -14,7 +14,7 @@ namespace EFCoreRepositoryPatternDemo.Models
             modelBuilder.Seed();
         }
 
-        public DbSet<ClsEmployee> CoreEmployees { get; set; }
-        public DbSet<ClsSkill> CoreSkills { get; set; }
+        public DbSet<ClsEmployee> coreEmployees { get; set; }
+        public DbSet<ClsSkill> coreSkill { get; set; }
     }
 }

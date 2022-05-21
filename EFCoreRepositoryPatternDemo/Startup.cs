@@ -29,8 +29,8 @@ namespace EFCoreRepositoryPatternDemo
             services.AddDbContextPool<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDBConnection")));
             //here we can use AddDbContext instead of pool but it will make our webapp slow when more people access it at a time
 
-            services.AddScoped<IEmployeeRepository, InMemoryRepository>();  // first paramaeter is interface/services and 2nd paramter is implemented class 
-
+          //  services.AddScoped<IEmployeeRepository, InMemoryRepository>();  // first paramaeter is interface/services and 2nd paramter is implemented class 
+            services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
