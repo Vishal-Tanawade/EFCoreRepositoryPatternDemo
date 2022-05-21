@@ -28,7 +28,7 @@ namespace EFCoreRepositoryPatternDemo.Controllers
             ClsEmployee emp = _employeeRepository.GetEmployee(employee);
             if (emp != null)
             {
-                HttpContext.Session.SetInt32("EmployeeID", emp.EmpID);
+                HttpContext.Session.SetInt32("EmployeeID", emp.EmpID); // In this way only we declare session variable
                 return RedirectToAction("Details");
             }
             else
@@ -46,7 +46,7 @@ namespace EFCoreRepositoryPatternDemo.Controllers
             if (HttpContext.Session.GetInt32("EmployeeID") != null)
             {
                 int id = Convert.ToInt32(HttpContext.Session.GetInt32("EmployeeID"));
-                ClsEmployee employee = _employeeRepository.GetEmployeeByID(id);
+                ClsEmployee employee = _employeeRepository.GetEmployeeByID(id); // as id==empid as we set session variable as empid
                 ViewBag.EmpID = employee.EmpID;
 
                 ViewBag.FirstName = employee.FirstName;
