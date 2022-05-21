@@ -49,7 +49,7 @@ namespace EFCoreRepositoryPatternDemo.Migrations
 
                     b.HasKey("EmpID");
 
-                    b.ToTable("coreEmployees");
+                    b.ToTable("CoreEmployees");
 
                     b.HasData(
                         new
@@ -106,7 +106,7 @@ namespace EFCoreRepositoryPatternDemo.Migrations
 
                     b.HasIndex("EmpID");
 
-                    b.ToTable("coreSkill");
+                    b.ToTable("CoreSkills");
 
                     b.HasData(
                         new

@@ -7,7 +7,7 @@ namespace EFCoreRepositoryPatternDemo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "coreEmployees",
+                name: "CoreEmployees",
                 columns: table => new
                 {
                     EmpID = table.Column<int>(type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace EFCoreRepositoryPatternDemo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "coreSkill",
+                name: "CoreSkills",
                 columns: table => new
                 {
                     SkillId = table.Column<int>(type: "int", nullable: false)
@@ -40,54 +40,54 @@ namespace EFCoreRepositoryPatternDemo.Migrations
                     table.ForeignKey(
                         name: "FK_coreSkill_coreEmployees_EmpID",
                         column: x => x.EmpID,
-                        principalTable: "coreEmployees",
+                        principalTable: "CoreEmployees",
                         principalColumn: "EmpID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
-                table: "coreEmployees",
+                table: "CoreEmployees",
                 columns: new[] { "EmpID", "CellNumber", "Email", "FirstName", "LastName", "Password" },
                 values: new object[] { 1, "(660) 663-4518", "aron.hawkins@aol.com", "Aaron", "Hawkins", "arron@123" });
 
             migrationBuilder.InsertData(
-                table: "coreEmployees",
+                table: "CoreEmployees",
                 columns: new[] { "EmpID", "CellNumber", "Email", "FirstName", "LastName", "Password" },
                 values: new object[] { 2, "(608) 265-2215", "hedy.greene@aol.com", "Hedy", "Greene", "hedy@123" });
 
             migrationBuilder.InsertData(
-                table: "coreEmployees",
+                table: "CoreEmployees",
                 columns: new[] { "EmpID", "CellNumber", "Email", "FirstName", "LastName", "Password" },
                 values: new object[] { 3, "(959) 119-8364", "melvin.porter@aol.com", "Melvin", "Porter", "melvin@123" });
 
             migrationBuilder.InsertData(
-                table: "coreSkill",
+                table: "CoreSkills",
                 columns: new[] { "SkillId", "EmpID", "ExperienceInYears", "Role", "SkillName" },
                 values: new object[] { 1, 1, 2, "Business Analyst", "Microsoft Office Suite" });
 
             migrationBuilder.InsertData(
-                table: "coreSkill",
+                table: "CoreSkills",
                 columns: new[] { "SkillId", "EmpID", "ExperienceInYears", "Role", "SkillName" },
                 values: new object[] { 2, 1, 3, "Developer", "Testing" });
 
             migrationBuilder.InsertData(
-                table: "coreSkill",
+                table: "CoreSkills",
                 columns: new[] { "SkillId", "EmpID", "ExperienceInYears", "Role", "SkillName" },
                 values: new object[] { 3, 1, 4, "Project Lead", "Stakeholder Management" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_coreSkill_EmpID",
-                table: "coreSkill",
+                table: "CoreSkills",
                 column: "EmpID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "coreSkill");
+                name: "CoreSkills");
 
             migrationBuilder.DropTable(
-                name: "coreEmployees");
+                name: "CoreEmployees");
         }
     }
 }
