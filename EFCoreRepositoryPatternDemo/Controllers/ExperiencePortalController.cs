@@ -4,6 +4,7 @@ using EFCoreRepositoryPatternDemo.Models;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EFCoreRepositoryPatternDemo.Controllers
 {
