@@ -7,10 +7,8 @@ namespace EFCoreRepositoryPatternDemo.Models
 {
     public class ClsEmployee
     {
-
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmpID { get; set; }
-
         [DisplayName("First Name")]
         [Required(ErrorMessage = "Please Enter First Name e.g. John")]
         public string FirstName { get; set; }
@@ -20,7 +18,6 @@ namespace EFCoreRepositoryPatternDemo.Models
         [Required(ErrorMessage = "Password should not be blank")]
         [PasswordPropertyText]
         public string Password { get; set; }
-
         [DisplayName("Cell Number")]
         [Required(ErrorMessage = "Cell Number should not be blank")]
 
