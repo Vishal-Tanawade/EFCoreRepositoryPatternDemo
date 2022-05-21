@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/_BeforeLayout.cshtml";
 }
 
-<h1>Employee Login</h1>
+<h1>Welcome to Employee Experience Portal</h1>
+<h3>Login</h3>
 
 <hr />
 <div class="row">
@@ -25,14 +26,19 @@
           
            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Login" class="btn btn-primary" />
+             <a asp-action="Create" asp-controller="ExperiencePortal" class="btn btn-info">SignUp</a>
             </div>
         </form>
+        <div class="text-dark"> @ViewData["Status"]</div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="bg-dark text-light">
+    <marquee direction="left"> @*this will run right to left text in dark background line*@
+        www.experienceportal.com
+    </marquee>
+
 </div>
 
 @section Scripts {
