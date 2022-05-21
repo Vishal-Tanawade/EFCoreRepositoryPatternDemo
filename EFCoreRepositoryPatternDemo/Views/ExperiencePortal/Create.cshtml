@@ -5,19 +5,15 @@
     Layout = "~/Views/Shared/_BeforeLayout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Experience Post Portal</h1>
 
-<h4>ClsEmployee</h4>
+<h4></h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="EmpID" class="control-label"></label>
-                <input asp-for="EmpID" class="form-control" />
-                <span asp-validation-for="EmpID" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -30,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input type="password" asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -51,7 +47,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Login</a>
 </div>
 
 @section Scripts {
