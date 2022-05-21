@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EFCoreRepositoryPatternDemo.Models;
+
 
 namespace EFCoreRepositoryPatternDemo
 {
@@ -23,6 +25,9 @@ namespace EFCoreRepositoryPatternDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSession(); // as we are using session variable we required to add this line
+
+            services.AddScoped<IEmployeeRepository, InMemoryRepository>();  // first paramaeter is interface/services and 2nd paramter is implemented class 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
