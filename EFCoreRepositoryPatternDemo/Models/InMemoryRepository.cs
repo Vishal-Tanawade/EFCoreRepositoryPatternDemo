@@ -123,14 +123,6 @@ namespace EFCoreRepositoryPatternDemo.Models
 
         }
 
-        IEnumerable<ClsEmployee> IEmployeeRepository.GetAllEmployee()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        IEnumerable<ClsSkill> IEmployeeRepository.GetAllSkill(int Id)
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }
