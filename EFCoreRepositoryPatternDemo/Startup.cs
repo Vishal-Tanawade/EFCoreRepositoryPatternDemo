@@ -42,6 +42,7 @@ namespace EFCoreRepositoryPatternDemo
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
