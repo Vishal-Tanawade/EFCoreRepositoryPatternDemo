@@ -11,7 +11,7 @@ namespace EFCoreRepositoryPatternDemo.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Seed();
+            modelBuilder.Seed();
         }
 
         public DbSet<ClsEmployee> coreEmployees { get; set; }
